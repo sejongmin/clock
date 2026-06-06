@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아날로그 시계</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+    <div class="clock-face">
+      <svg id="clockSvg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="110" r="105" fill="#ffffff" stroke="#ddd" stroke-width="1"/>
+        <g id="ticks"></g>
+        <g id="nums"></g>
+        <line id="hourHand" x1="110" y1="110" x2="110" y2="60"
+          stroke="#1a1a1a" stroke-width="5" stroke-linecap="round"/>
+        <line id="minHand" x1="110" y1="110" x2="110" y2="35"
+          stroke="#555" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="110" cy="110" r="5" fill="#1a1a1a"/>
+        <circle cx="110" cy="110" r="3" fill="#1a1a1a"/>
+      </svg>
+    </div>
+
+    <div class="time-input-row">
+      <input type="number" id="inputH" min="0" max="23" value="10" placeholder="HH" />
+      <span class="time-sep">:</span>
+      <input type="number" id="inputM" min="0" max="59" value="10" placeholder="MM" />
+    </div>
+
+    <div class="btn-row">
+      <button id="btnMinus">
+        <i class="ti ti-chevron-left"></i> 5분 전
+      </button>
+      <button id="btnPlus">
+        5분 후 <i class="ti ti-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="time-display" id="timeDisplay">오전 10:10</div>
+  </div>
+
+  <script src="clock.js"></script>
+</body>
+</html>
